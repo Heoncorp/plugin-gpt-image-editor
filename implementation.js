@@ -1,9 +1,13 @@
 async function gpt_image_editor(params, userSettings, authorizedResources) {
   const prompt = params.prompt;
   const openaikey = userSettings.openaikey;
+  const endpoint = userSettings.endpoint
+  const apiversion = userSettings.apiversion
   const quality = userSettings.quality || 'auto';
   const resolution = userSettings.resolution || 'auto';
   const background = userSettings.background || 'auto';
+  
+  
 
   if (!openaikey) {
     throw new Error(
@@ -59,7 +63,7 @@ async function gpt_image_editor(params, userSettings, authorizedResources) {
     };
 
     let response = await fetch(
-      'https://api.openai.com/v1/images/generations',
+      endpoint + '/generations?api-version=' + apiversion,
       requestOptions
     );
     if (response.status === 401) {
@@ -105,7 +109,7 @@ async function gpt_image_editor(params, userSettings, authorizedResources) {
     }
 
     // Call the API
-    const response = await fetch('https://api.openai.com/v1/images/edits', {
+    const response = await fetch(endpoint + '/edits?api-version=' + apiversion, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${openaikey}`,
