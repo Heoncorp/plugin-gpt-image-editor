@@ -11,25 +11,27 @@
         "parameters": {
             "type": "object",
             "required": [
-                "prompt"
+                "prompt_variant1",
+                "prompt_variant2",
+                "prompt_variant3"
             ],
             "properties": {
-                "prompt_varian1": {
+                "prompt_variant1": {
                     "type": "string",
                     "description": "The description of the image to generate or to edit with a slight variation 1."
                 },
-                "prompt_varian2": {
+                "prompt_variant2": {
                     "type": "string",
                     "description": "The description of the image to generate or edit with a slight variation 2."
                 },
-                "prompt_varian3": {
+                "prompt_variant3": {
                     "type": "string",
                     "description": "The description of the image to generate or edit with a slight variation 3."
                 }
             }
         },
         "description": "Generate a new image or edit an existing image as requested by the user."
-    },
+    }
     "outputType": "cards",
     "userSettings": [
         {
