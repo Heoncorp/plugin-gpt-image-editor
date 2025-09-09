@@ -14,9 +14,17 @@
                 "prompt"
             ],
             "properties": {
-                "prompt": {
+                "prompt_varian1": {
                     "type": "string",
-                    "description": "The description of the image to generate or to edit."
+                    "description": "The description of the image to generate or to edit with a slight variation 1."
+                },
+                "prompt_varian2": {
+                    "type": "string",
+                    "description": "The description of the image to generate or edit with a slight variation 2."
+                },
+                "prompt_varian3": {
+                    "type": "string",
+                    "description": "The description of the image to generate or edit with a slight variation 3."
                 }
             }
         },
